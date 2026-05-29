@@ -25,9 +25,16 @@
     font-family: 'DM Sans', sans-serif;
     background: var(--cream);
     color: var(--dark);
-    width: 900px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     overflow-x: hidden;
+  }
+
+  /* Contenedor centrado reutilizable */
+  .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 52px;
   }
 
   /* ── HERO ─────────────────────────────────── */
@@ -36,9 +43,17 @@
     min-height: 420px;
     background: var(--dark);
     overflow: hidden;
+  }
+
+  .hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 52px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-bg {
@@ -49,7 +64,6 @@
       radial-gradient(ellipse 40% 60% at 20% 80%, rgba(212,114,74,0.15) 0%, transparent 60%);
   }
 
-  /* decorative lines */
   .hero-bg::before {
     content: '';
     position: absolute;
@@ -70,11 +84,10 @@
   .hero-left {
     position: relative;
     z-index: 2;
-    padding: 52px 40px 52px 52px;
+    padding: 52px 40px 52px 0;
   }
 
   .hero-eyebrow {
-    font-family: 'DM Sans', sans-serif;
     font-size: 9px;
     font-weight: 500;
     letter-spacing: 3.5px;
@@ -92,13 +105,9 @@
     margin-bottom: 6px;
   }
 
-  .hero-name em {
-    font-style: italic;
-    color: var(--terra3);
-  }
+  .hero-name em { font-style: italic; color: var(--terra3); }
 
   .hero-title {
-    font-family: 'DM Sans', sans-serif;
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 2px;
@@ -120,11 +129,7 @@
     margin-bottom: 32px;
   }
 
-  .hero-cta-row {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  .hero-cta-row { display: flex; gap: 10px; flex-wrap: wrap; }
 
   .btn-primary {
     background: var(--terra);
@@ -138,7 +143,6 @@
     border-radius: 2px;
     transition: background 0.2s;
   }
-
   .btn-primary:hover { background: var(--terra2); }
 
   .btn-ghost {
@@ -156,13 +160,12 @@
   .hero-right {
     position: relative;
     z-index: 2;
-    padding: 40px 52px 40px 20px;
+    padding: 40px 0 40px 20px;
     display: flex;
     flex-direction: column;
     gap: 14px;
   }
 
-  /* KPI cards en hero */
   .kpi-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(181,69,27,0.35);
@@ -182,19 +185,8 @@
     min-width: 80px;
   }
 
-  .kpi-info .kpi-label {
-    font-size: 11.5px;
-    font-weight: 500;
-    color: #fff;
-    display: block;
-  }
-
-  .kpi-info .kpi-sub {
-    font-size: 10px;
-    color: var(--light);
-    display: block;
-    margin-top: 2px;
-  }
+  .kpi-info .kpi-label { font-size: 11.5px; font-weight: 500; color: #fff; display: block; }
+  .kpi-info .kpi-sub { font-size: 10px; color: var(--light); display: block; margin-top: 2px; }
 
   .kpi-badge {
     font-size: 8.5px;
@@ -209,10 +201,8 @@
     display: inline-block;
   }
 
-  /* ── SECCIÓN SERVICIOS ───────────────────── */
-  .section {
-    padding: 52px;
-  }
+  /* ── SERVICIOS ───────────────────────────── */
+  .section { padding: 52px 0; }
 
   .section-label {
     font-size: 9px;
@@ -231,11 +221,7 @@
     line-height: 1.15;
     margin-bottom: 32px;
   }
-
-  .section-title em {
-    font-style: italic;
-    color: var(--terra);
-  }
+  .section-title em { font-style: italic; color: var(--terra); }
 
   .services-grid {
     display: grid;
@@ -246,222 +232,134 @@
     margin-bottom: 48px;
   }
 
-  .service-card {
-    background: var(--cream);
-    padding: 28px 24px;
-    transition: background 0.2s;
-  }
-
+  .service-card { background: var(--cream); padding: 28px 24px; transition: background 0.2s; }
   .service-card:hover { background: var(--warm); }
 
   .service-icon {
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     background: var(--warm);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 14px;
-    font-size: 16px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 14px; font-size: 16px;
   }
 
   .service-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--dark);
-    margin-bottom: 8px;
-    line-height: 1.2;
+    font-size: 18px; font-weight: 600;
+    color: var(--dark); margin-bottom: 8px; line-height: 1.2;
   }
 
-  .service-desc {
-    font-size: 11.5px;
-    color: var(--mid);
-    line-height: 1.6;
-  }
+  .service-desc { font-size: 11.5px; color: var(--mid); line-height: 1.6; }
 
-  .service-tools {
-    margin-top: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-  }
+  .service-tools { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 4px; }
 
   .tool-tag {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--terra);
-    background: rgba(181,69,27,0.08);
-    padding: 3px 7px;
-    border-radius: 2px;
+    font-size: 9px; font-weight: 500; letter-spacing: 0.8px;
+    text-transform: uppercase; color: var(--terra);
+    background: rgba(181,69,27,0.08); padding: 3px 7px; border-radius: 2px;
   }
 
   /* ── PORTAFOLIO ──────────────────────────── */
-  .portfolio-section {
-    background: var(--dark);
-    padding: 52px;
-  }
-
+  .portfolio-section { background: var(--dark); padding: 52px 0; }
   .portfolio-section .section-label { color: var(--terra3); }
-
-  .portfolio-section .section-title {
-    color: #fff;
-  }
-
+  .portfolio-section .section-title { color: #fff; }
   .portfolio-section .section-title em { color: var(--terra2); }
 
   .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 8px;
+    gap: 12px; margin-top: 8px;
   }
 
   .portfolio-item {
-    position: relative;
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 3px;
-    background: #2a2018;
+    position: relative; aspect-ratio: 1;
+    overflow: hidden; border-radius: 3px; background: #2a2018;
   }
 
   .portfolio-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    opacity: 0.85;
+    width: 100%; height: 100%; object-fit: cover;
+    display: block; opacity: 0.85;
     transition: opacity 0.3s, transform 0.4s;
   }
-
-  .portfolio-item:hover img {
-    opacity: 1;
-    transform: scale(1.04);
-  }
+  .portfolio-item:hover img { opacity: 1; transform: scale(1.04); }
 
   .portfolio-overlay {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
+    position: absolute; bottom: 0; left: 0; right: 0;
     background: linear-gradient(transparent, rgba(26,20,16,0.85));
     padding: 24px 14px 12px;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.7);
-    opacity: 0;
-    transition: opacity 0.3s;
+    font-size: 10px; font-weight: 500; letter-spacing: 1px;
+    text-transform: uppercase; color: rgba(255,255,255,0.7);
+    opacity: 0; transition: opacity 0.3s;
   }
-
   .portfolio-item:hover .portfolio-overlay { opacity: 1; }
 
   .portfolio-note {
-    margin-top: 18px;
-    font-size: 11px;
-    color: var(--light);
-    font-style: italic;
-    text-align: center;
+    margin-top: 18px; font-size: 11px;
+    color: var(--light); font-style: italic; text-align: center;
   }
 
+  /* ── SLIDER ──────────────────────────────── */
+  .slider-section { background: var(--dark); padding: 52px 0; }
+
   /* ── SOBRE MÍ ────────────────────────────── */
-  .about-section {
-    background: var(--warm);
-    padding: 52px;
+  .about-section { background: var(--warm); padding: 52px 0; }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 52px;
     display: grid;
     grid-template-columns: 1fr 1.6fr;
     gap: 48px;
     align-items: start;
   }
 
-  .about-left {}
-
   .about-years {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 80px;
-    font-weight: 300;
-    color: var(--terra);
-    line-height: 1;
-    margin-bottom: 4px;
+    font-size: 80px; font-weight: 300;
+    color: var(--terra); line-height: 1; margin-bottom: 4px;
   }
 
   .about-years-label {
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--mid);
-    margin-bottom: 24px;
+    font-size: 11px; font-weight: 400;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--mid); margin-bottom: 24px;
   }
 
-  .about-tools {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .about-tools { display: flex; flex-direction: column; gap: 8px; }
 
-  .tool-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+  .tool-row { display: flex; align-items: center; gap: 10px; }
 
   .tool-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--terra);
-    border-radius: 50%;
-    flex-shrink: 0;
+    width: 6px; height: 6px;
+    background: var(--terra); border-radius: 50%; flex-shrink: 0;
   }
 
-  .tool-name {
-    font-size: 11.5px;
-    color: var(--mid);
-    font-weight: 400;
-  }
-
-  .about-right {}
+  .tool-name { font-size: 11.5px; color: var(--mid); font-weight: 400; }
 
   .about-bio {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 20px;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--dark);
-    line-height: 1.6;
-    margin-bottom: 20px;
+    font-size: 20px; font-weight: 300; font-style: italic;
+    color: var(--dark); line-height: 1.6; margin-bottom: 20px;
   }
 
-  .about-body {
-    font-size: 12px;
-    color: var(--mid);
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
+  .about-body { font-size: 12px; color: var(--mid); line-height: 1.7; margin-bottom: 24px; }
 
-  .highlight-pills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
+  .highlight-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 
   .pill {
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--terra);
-    border: 1px solid var(--terra3);
-    padding: 5px 12px;
-    border-radius: 20px;
+    font-size: 10px; font-weight: 500; letter-spacing: 0.8px;
+    text-transform: uppercase; color: var(--terra);
+    border: 1px solid var(--terra3); padding: 5px 12px; border-radius: 20px;
   }
 
   /* ── CONTACTO ────────────────────────────── */
-  .contact-section {
-    background: var(--terra);
-    padding: 44px 52px;
+  .contact-section { background: var(--terra); padding: 44px 0; }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 52px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -470,64 +368,38 @@
 
   .contact-left .contact-heading {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 36px;
-    font-weight: 300;
-    color: #fff;
-    line-height: 1.15;
-    margin-bottom: 8px;
+    font-size: 36px; font-weight: 300;
+    color: #fff; line-height: 1.15; margin-bottom: 8px;
   }
 
-  .contact-left .contact-sub {
-    font-size: 12px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-  }
+  .contact-left .contact-sub { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.6; }
 
-  .contact-right {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-  }
+  .contact-right { display: flex; flex-direction: column; gap: 14px; }
 
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    text-decoration: none;
-  }
+  .contact-item { display: flex; align-items: center; gap: 14px; text-decoration: none; }
 
   .contact-icon {
-    width: 38px;
-    height: 38px;
+    width: 38px; height: 38px;
     background: rgba(255,255,255,0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    flex-shrink: 0;
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 15px; flex-shrink: 0;
   }
 
   .contact-text .c-label {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.55);
-    display: block;
+    font-size: 9px; font-weight: 500; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(255,255,255,0.55); display: block;
   }
 
-  .contact-text .c-value {
-    font-size: 13px;
-    font-weight: 400;
-    color: #fff;
-    display: block;
-  }
+  .contact-text .c-value { font-size: 13px; font-weight: 400; color: #fff; display: block; }
 
   /* ── FOOTER ──────────────────────────────── */
-  .footer {
-    background: var(--dark);
-    padding: 18px 52px;
+  .footer { background: var(--dark); padding: 18px 0; }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 52px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -535,18 +407,11 @@
 
   .footer-brand {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: rgba(255,255,255,0.5);
-    letter-spacing: 1px;
+    font-size: 16px; font-weight: 300;
+    color: rgba(255,255,255,0.5); letter-spacing: 1px;
   }
 
-  .footer-tag {
-    font-size: 9px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--terra2);
-  }
+  .footer-tag { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--terra2); }
 
 </style>
 </head>
@@ -555,46 +420,44 @@
 <!-- ══ HERO ══════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-bg"></div>
-
-  <div class="hero-left">
-    <p class="hero-eyebrow">Consultora en Marketing Digital</p>
-    <h1 class="hero-name">Noemy<br><em>Hernández</em></h1>
-    <p class="hero-title">Community Manager &nbsp;·&nbsp; Social Media &nbsp;·&nbsp; Ads</p>
-    <p class="hero-tagline">
-      Convierto tu presencia digital en una herramienta real de crecimiento para tu negocio.
-    </p>
-    <div class="hero-cta-row">
-      <a href="https://wa.me/50255509829" class="btn-primary">Escribir por WhatsApp</a>
-      <a href="https://www.linkedin.com/in/noemy-hernández-guzmán-a53731170/" class="btn-ghost">Ver LinkedIn</a>
-    </div>
-  </div>
-
-  <div class="hero-right">
-    <div style="margin-bottom:4px;">
-      <p style="font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra3);margin-bottom:10px;">Caso de éxito real · LinkedIn corporativo</p>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-num">+1K</div>
-      <div class="kpi-info">
-        <span class="kpi-label">Contactos en red</span>
-        <span class="kpi-sub">Crecimiento orgánico desde cero</span>
-        <span class="kpi-badge">Networking</span>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Consultora en Marketing Digital</p>
+      <h1 class="hero-name">Noemy<br><em>Hernández</em></h1>
+      <p class="hero-title">Community Manager &nbsp;·&nbsp; Social Media &nbsp;·&nbsp; Ads</p>
+      <p class="hero-tagline">Convierto tu presencia digital en una herramienta real de crecimiento para tu negocio.</p>
+      <div class="hero-cta-row">
+        <a href="https://wa.me/50255509829" class="btn-primary">Escribir por WhatsApp</a>
+        <a href="https://www.linkedin.com/in/noemy-hernández-guzmán-a53731170/" class="btn-ghost">Ver LinkedIn</a>
       </div>
     </div>
-    <div class="kpi-card">
-      <div class="kpi-num">+300%</div>
-      <div class="kpi-info">
-        <span class="kpi-label">Impresiones de publicaciones</span>
-        <span class="kpi-sub">Incremento sostenido en alcance</span>
-        <span class="kpi-badge">Alcance</span>
+    <div class="hero-right">
+      <div style="margin-bottom:4px;">
+        <p style="font-size:9px;letter-spacing:2.5px;text-transform:uppercase;color:var(--terra3);margin-bottom:10px;">Caso de éxito real · LinkedIn corporativo</p>
       </div>
-    </div>
-    <div class="kpi-card">
-      <div class="kpi-num">15×</div>
-      <div class="kpi-info">
-        <span class="kpi-label">Apariciones en búsqueda</span>
-        <span class="kpi-sub">Promedio semanal de visibilidad</span>
-        <span class="kpi-badge">Visibilidad</span>
+      <div class="kpi-card">
+        <div class="kpi-num">+1K</div>
+        <div class="kpi-info">
+          <span class="kpi-label">Contactos en red</span>
+          <span class="kpi-sub">Crecimiento orgánico desde cero</span>
+          <span class="kpi-badge">Networking</span>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">+300%</div>
+        <div class="kpi-info">
+          <span class="kpi-label">Impresiones de publicaciones</span>
+          <span class="kpi-sub">Incremento sostenido en alcance</span>
+          <span class="kpi-badge">Alcance</span>
+        </div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">15×</div>
+        <div class="kpi-info">
+          <span class="kpi-label">Apariciones en búsqueda</span>
+          <span class="kpi-sub">Promedio semanal de visibilidad</span>
+          <span class="kpi-badge">Visibilidad</span>
+        </div>
       </div>
     </div>
   </div>
@@ -602,64 +465,58 @@
 
 <!-- ══ SERVICIOS ═════════════════════════════════ -->
 <section class="section">
-  <p class="section-label">Lo que ofrezco</p>
-  <h2 class="section-title">Servicios diseñados para<br><em>hacer crecer tu marca</em></h2>
-
-  <div class="services-grid">
-    <div class="service-card">
-      <div class="service-icon">📱</div>
-      <div class="service-name">Gestión de Redes Sociales</div>
-      <p class="service-desc">Administración integral de tus cuentas: creación de contenido, programación, monitoreo y análisis de métricas de engagement.</p>
-      <div class="service-tools">
-        <span class="tool-tag">Meta</span>
-        <span class="tool-tag">Instagram</span>
-        <span class="tool-tag">LinkedIn</span>
-        <span class="tool-tag">TikTok</span>
+  <div class="inner">
+    <p class="section-label">Lo que ofrezco</p>
+    <h2 class="section-title">Servicios diseñados para<br><em>hacer crecer tu marca</em></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <div class="service-name">Gestión de Redes Sociales</div>
+        <p class="service-desc">Administración integral de tus cuentas: creación de contenido, programación, monitoreo y análisis de métricas de engagement.</p>
+        <div class="service-tools">
+          <span class="tool-tag">Meta</span><span class="tool-tag">Instagram</span>
+          <span class="tool-tag">LinkedIn</span><span class="tool-tag">TikTok</span>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">🎯</div>
-      <div class="service-name">Publicidad Digital</div>
-      <p class="service-desc">Campañas pagadas con segmentación precisa de audiencias, optimización de presupuesto y reportes de resultados con análisis de ROI.</p>
-      <div class="service-tools">
-        <span class="tool-tag">Meta Ads</span>
-        <span class="tool-tag">Google Ads</span>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <div class="service-name">Publicidad Digital</div>
+        <p class="service-desc">Campañas pagadas con segmentación precisa de audiencias, optimización de presupuesto y reportes de resultados con análisis de ROI.</p>
+        <div class="service-tools">
+          <span class="tool-tag">Meta Ads</span><span class="tool-tag">Google Ads</span>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">✍️</div>
-      <div class="service-name">Creación de Contenido</div>
-      <p class="service-desc">Diseño de artes, redacción de copys, guiones para video y estrategia de contenidos mensual alineada a los objetivos de tu marca.</p>
-      <div class="service-tools">
-        <span class="tool-tag">Canva</span>
-        <span class="tool-tag">IA Generativa</span>
+      <div class="service-card">
+        <div class="service-icon">✍️</div>
+        <div class="service-name">Creación de Contenido</div>
+        <p class="service-desc">Diseño de artes, redacción de copys, guiones para video y estrategia de contenidos mensual alineada a los objetivos de tu marca.</p>
+        <div class="service-tools">
+          <span class="tool-tag">Canva</span><span class="tool-tag">IA Generativa</span>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📧</div>
-      <div class="service-name">Email Marketing</div>
-      <p class="service-desc">Estrategias de email con automatizaciones para nutrir leads, fidelizar clientes y mejorar tasas de apertura y conversión.</p>
-      <div class="service-tools">
-        <span class="tool-tag">Mailchimp</span>
-        <span class="tool-tag">HubSpot</span>
+      <div class="service-card">
+        <div class="service-icon">📧</div>
+        <div class="service-name">Email Marketing</div>
+        <p class="service-desc">Estrategias de email con automatizaciones para nutrir leads, fidelizar clientes y mejorar tasas de apertura y conversión.</p>
+        <div class="service-tools">
+          <span class="tool-tag">Mailchimp</span><span class="tool-tag">HubSpot</span>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">📊</div>
-      <div class="service-name">Estrategia Digital</div>
-      <p class="service-desc">Planificación integral de marketing digital: roadmap, definición de KPIs, análisis de competencia y acompañamiento estratégico continuo.</p>
-      <div class="service-tools">
-        <span class="tool-tag">Estrategia</span>
-        <span class="tool-tag">Analítica</span>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-name">Estrategia Digital</div>
+        <p class="service-desc">Planificación integral de marketing digital: roadmap, definición de KPIs, análisis de competencia y acompañamiento estratégico continuo.</p>
+        <div class="service-tools">
+          <span class="tool-tag">Estrategia</span><span class="tool-tag">Analítica</span>
+        </div>
       </div>
-    </div>
-    <div class="service-card">
-      <div class="service-icon">💼</div>
-      <div class="service-name">Branding Digital</div>
-      <p class="service-desc">Gestión de la identidad visual y comunicacional de tu marca en todos los canales, asegurando coherencia y consistencia de marca.</p>
-      <div class="service-tools">
-        <span class="tool-tag">Identidad</span>
-        <span class="tool-tag">Tono de voz</span>
+      <div class="service-card">
+        <div class="service-icon">💼</div>
+        <div class="service-name">Branding Digital</div>
+        <p class="service-desc">Gestión de la identidad visual y comunicacional de tu marca en todos los canales, asegurando coherencia y consistencia de marca.</p>
+        <div class="service-tools">
+          <span class="tool-tag">Identidad</span><span class="tool-tag">Tono de voz</span>
+        </div>
       </div>
     </div>
   </div>
@@ -667,108 +524,168 @@
 
 <!-- ══ PORTAFOLIO ════════════════════════════════ -->
 <section class="portfolio-section">
-  <p class="section-label">Trabajo real</p>
-  <h2 class="section-title">Muestra de <em>proyectos</em></h2>
-  <div class="portfolio-grid">
-    <div class="portfolio-item">
-      <img src="image_3.jpeg" alt="Arte Cideautos - Llévate tu carro">
-      <div class="portfolio-overlay">Social Media · Automotriz</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="image_2.jpeg" alt="Arte producto mesas y bancos">
-      <div class="portfolio-overlay">Publicidad · Producto</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="image_4.jpeg" alt="Arte profesional BI">
-      <div class="portfolio-overlay">Campaña · Automotriz</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="image_1.jpeg" alt="Arte Cideautos - Clientes satisfechos">
-      <div class="portfolio-overlay">Branding · Profesional</div>
-    </div>
-    <div class="portfolio-item">
-      <img src="image_5.jpeg" alt="Arte Día del Padre Cideautos">
-      <div class="portfolio-overlay">Fecha especial · Automotriz</div>
-    </div>
-    <div class="portfolio-item" style="background: rgba(181,69,27,0.12); display:flex; align-items:center; justify-content:center; border: 1px dashed rgba(181,69,27,0.3);">
-      <div style="text-align:center; padding: 20px;">
-        <div style="font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--terra2); margin-bottom:6px;">+5</div>
-        <div style="font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--light);">Años de<br>experiencia</div>
+  <div class="inner">
+    <p class="section-label">Trabajo real</p>
+    <h2 class="section-title">Muestra de <em>proyectos</em></h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="image_3.jpeg" alt="Arte Cideautos">
+        <div class="portfolio-overlay">Social Media · Automotriz</div>
+      </div>
+      <div class="portfolio-item">
+        <img src="image_2.jpeg" alt="Arte producto">
+        <div class="portfolio-overlay">Publicidad · Producto</div>
+      </div>
+      <div class="portfolio-item">
+        <img src="image_4.jpeg" alt="Arte profesional">
+        <div class="portfolio-overlay">Branding · Profesional</div>
+      </div>
+      <div class="portfolio-item">
+        <img src="image_1.jpeg" alt="Arte Cideautos clientes">
+        <div class="portfolio-overlay">Campaña · Automotriz</div>
+      </div>
+      <div class="portfolio-item">
+        <img src="image_5.jpeg" alt="Arte Día del Padre">
+        <div class="portfolio-overlay">Fecha especial · Automotriz</div>
+      </div>
+      <div class="portfolio-item" style="background:rgba(181,69,27,0.12);display:flex;align-items:center;justify-content:center;border:1px dashed rgba(181,69,27,0.3);">
+        <div style="text-align:center;padding:20px;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--terra2);margin-bottom:6px;">+5</div>
+          <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--light);">Años de<br>experiencia</div>
+        </div>
       </div>
     </div>
+    <p class="portfolio-note">Artes diseñados para clientes reales · Múltiples industrias · Guatemala</p>
   </div>
-  <p class="portfolio-note">Artes diseñados para clientes reales · Múltiples industrias · Guatemala</p>
 </section>
+
+<!-- ══ SLIDER MANUAL PANADELY ════════════════════ -->
+<section class="slider-section">
+  <div class="inner">
+    <p style="font-size:9px;font-weight:500;letter-spacing:3.5px;text-transform:uppercase;color:var(--terra3);margin-bottom:8px;">Proyecto destacado</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:#fff;line-height:1.15;margin-bottom:8px;">Manual de Marca <em style="font-style:italic;color:var(--terra2);">Panadely</em></h2>
+    <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:32px;">Desliza para ver el proyecto completo</p>
+
+    <div style="position:relative;padding:0 32px;">
+      <!-- Slider -->
+      <div id="slider" style="overflow:hidden;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5);max-height:520px;">
+        <div id="slider-track" style="display:flex;transition:transform 0.4s ease;">
+          <img src="panadely_1.jpg" style="min-width:100%;max-width:100%;height:500px;  object-fit:contain;background:#1a1410;">
+          <img src="panadely_2.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_3.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_4.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_5.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_6.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_7.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_8.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_9.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+          <img src="panadely_10.jpg" style="min-width:100%;max-width:100%;height:500px; object-fit:contain;background:#1a1410;">
+        </div>
+      </div>
+      <!-- Flechas -->
+      <button onclick="moverSlider(-1)" style="position:absolute;left:0;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--terra);border:none;color:#fff;font-size:22px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);">‹</button>
+      <button onclick="moverSlider(1)"  style="position:absolute;right:0;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:var(--terra);border:none;color:#fff;font-size:22px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.4);">›</button>
+    </div>
+
+    <!-- Puntitos -->
+    <div id="dots" style="display:flex;justify-content:center;gap:8px;margin-top:20px;">
+      <span onclick="irA(0)" style="width:8px;height:8px;border-radius:50%;background:var(--terra);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(1)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(2)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(3)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(4)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(5)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(6)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(7)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(8)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+      <span onclick="irA(9)" style="width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all 0.3s;display:inline-block;"></span>
+    </div>
+
+    <!-- Contador y descarga -->
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:16px;">
+      <span id="contador" style="font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:2px;">1 / 10</span>
+      <a href="manual_marca_panadely_demo.pdf" download style="font-size:10px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra2);text-decoration:none;border:1px solid rgba(181,69,27,0.4);padding:8px 16px;border-radius:2px;">Descargar manual completo ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- Script slider -->
+<script>
+  let actual = 0;
+  const total = 10;
+  function moverSlider(dir) { actual = (actual + dir + total) % total; actualizarSlider(); }
+  function irA(i) { actual = i; actualizarSlider(); }
+  function actualizarSlider() {
+    document.getElementById('slider-track').style.transform = `translateX(-${actual * 100}%)`;
+    document.getElementById('contador').textContent = `${actual + 1} / ${total}`;
+    const dots = document.getElementById('dots').children;
+    for (let i = 0; i < dots.length; i++)
+      dots[i].style.background = i === actual ? 'var(--terra)' : 'rgba(255,255,255,0.2)';
+  }
+</script>
 
 <!-- ══ SOBRE MÍ ══════════════════════════════════ -->
 <section class="about-section">
-  <div class="about-left">
-    <div class="about-years">5+</div>
-    <div class="about-years-label">Años de experiencia</div>
-    <div class="about-tools">
-      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Meta Ads &amp; Google Ads</span></div>
-      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">HubSpot CRM</span></div>
-      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Mailchimp</span></div>
-      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Canva Avanzado</span></div>
-      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">IA Generativa (Gemini, Claude)</span></div>
-      <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Análisis de métricas</span></div>
+  <div class="about-inner">
+    <div class="about-left">
+      <div class="about-years">5+</div>
+      <div class="about-years-label">Años de experiencia</div>
+      <div class="about-tools">
+        <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Meta Ads &amp; Google Ads</span></div>
+        <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">HubSpot CRM</span></div>
+        <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Mailchimp</span></div>
+        <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Canva Avanzado</span></div>
+        <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">IA Generativa (Gemini, Claude)</span></div>
+        <div class="tool-row"><div class="tool-dot"></div><span class="tool-name">Análisis de métricas</span></div>
+      </div>
     </div>
-  </div>
-
-  <div class="about-right">
-    <p class="about-bio">
-      "No gestiono redes sociales. Construyo la presencia digital que tu negocio necesita para crecer."
-    </p>
-    <p class="about-body">
-      Soy Noemy Hernández, consultora en marketing digital con base en Antigua Guatemala. Llevo más de 5 años ayudando a empresas y emprendedores a conectar con sus audiencias de forma auténtica y estratégica.
-      <br><br>
-      Mi enfoque combina creatividad con analítica: cada decisión tiene un por qué respaldado en datos. He trabajado con clientes en industrias tan diversas como automotriz, retail y servicios profesionales, adaptando la estrategia a cada contexto y objetivo.
-    </p>
-    <div class="highlight-pills">
-      <span class="pill">Estrategia Digital</span>
-      <span class="pill">Community Manager</span>
-      <span class="pill">Publicidad Pagada</span>
-      <span class="pill">Contenido con IA</span>
-      <span class="pill">Email Marketing</span>
+    <div class="about-right">
+      <p class="about-bio">"No gestiono redes sociales. Construyo la presencia digital que tu negocio necesita para crecer."</p>
+      <p class="about-body">
+        Soy Noemy Hernández, consultora en marketing digital con base en Antigua Guatemala. Llevo más de 5 años ayudando a empresas y emprendedores a conectar con sus audiencias de forma auténtica y estratégica.<br><br>
+        Mi enfoque combina creatividad con analítica: cada decisión tiene un por qué respaldado en datos. He trabajado con clientes en industrias tan diversas como automotriz, retail y servicios profesionales.
+      </p>
+      <div class="highlight-pills">
+        <span class="pill">Estrategia Digital</span>
+        <span class="pill">Community Manager</span>
+        <span class="pill">Publicidad Pagada</span>
+        <span class="pill">Contenido con IA</span>
+        <span class="pill">Email Marketing</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ══ CONTACTO ══════════════════════════════════ -->
 <section class="contact-section">
-  <div class="contact-left">
-    <h2 class="contact-heading">¿Listo para hacer<br>crecer tu marca?</h2>
-    <p class="contact-sub">Conversemos sobre tu negocio y cómo una estrategia digital bien ejecutada puede transformar tus resultados.</p>
-  </div>
-  <div class="contact-right">
-    <a href="https://wa.me/50255509829" class="contact-item">
-      <div class="contact-icon">💬</div>
-      <div class="contact-text">
-        <span class="c-label">WhatsApp</span>
-        <span class="c-value">+502 5550-9829</span>
-      </div>
-    </a>
-    <a href="mailto:noemy.0331@gmail.com" class="contact-item">
-      <div class="contact-icon">✉</div>
-      <div class="contact-text">
-        <span class="c-label">Correo</span>
-        <span class="c-value">noemy.0331@gmail.com</span>
-      </div>
-    </a>
-    <a href="https://www.linkedin.com/in/noemy-hernández-guzmán-a53731170/" class="contact-item">
-      <div class="contact-icon">in</div>
-      <div class="contact-text">
-        <span class="c-label">LinkedIn</span>
-        <span class="c-value">noemy-hernández-guzmán</span>
-      </div>
-    </a>
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2 class="contact-heading">¿Listo para hacer<br>crecer tu marca?</h2>
+      <p class="contact-sub">Conversemos sobre tu negocio y cómo una estrategia digital bien ejecutada puede transformar tus resultados.</p>
+    </div>
+    <div class="contact-right">
+      <a href="https://wa.me/50255509829" class="contact-item">
+        <div class="contact-icon">💬</div>
+        <div class="contact-text"><span class="c-label">WhatsApp</span><span class="c-value">+502 5550-9829</span></div>
+      </a>
+      <a href="mailto:noemy.0331@gmail.com" class="contact-item">
+        <div class="contact-icon">✉</div>
+        <div class="contact-text"><span class="c-label">Correo</span><span class="c-value">noemy.0331@gmail.com</span></div>
+      </a>
+      <a href="https://www.linkedin.com/in/noemy-hernández-guzmán-a53731170/" class="contact-item">
+        <div class="contact-icon">in</div>
+        <div class="contact-text"><span class="c-label">LinkedIn</span><span class="c-value">noemy-hernández-guzmán</span></div>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- ══ FOOTER ════════════════════════════════════ -->
 <footer class="footer">
-  <span class="footer-brand">Noemy Hernández Guzmán</span>
-  <span class="footer-tag">Marketing Digital · Antigua Guatemala · 2025</span>
+  <div class="footer-inner">
+    <span class="footer-brand">Noemy Hernández Guzmán</span>
+    <span class="footer-tag">Marketing Digital · Antigua Guatemala · 2025</span>
+  </div>
 </footer>
 
 </body>
